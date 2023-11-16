@@ -1,0 +1,7 @@
+.low{
+    text-align: left;
+    background-image: linear-gradient(rgba(232, 133, 133, 0.764));
+    padding: 4px 4px
+    box-shadaw 10px;
+    color:rgb(238, 238, 238);
+}

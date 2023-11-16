@@ -1,0 +1,8 @@
+.para{
+    text-align: center;
+    background-image: linear-gradient(black);
+    /* padding: 2px 2px; */
+    box-shadow: 10px;
+    color:white
+
+}
