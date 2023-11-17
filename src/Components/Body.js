@@ -14,17 +14,16 @@ const Body = () => {
         setText('')
     }
 
-
-
-
-    
-
     const [fruits, setFruits] = useState([
         { fruit: 'water melon' },
         { fruit: 'apple' },
         {fruit:'mango'}
     ])
-
+    const [index, setIndex] = useState(0)  // 1
+    function change() {  //0+1%3
+        const newIndex = (index + 1) % fruits.length
+        setIndex(newIndex)
+    }
     return (
         <div style={bodyStyle}>
             <div style={{ paddingTop: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
@@ -33,13 +32,17 @@ const Body = () => {
                 <p>likes: {likes}</p>
                 
                 {/* destructuring */}
-                <button onClick={count} variant="contained"  style={{color:'ActiveBorder',backgroundColor:'green'}}>like</button>
+                <button onClick={count} variant="contained"  style={{color:'ActiveBorder',backgroundColor:'blue'}}>like</button>
             </div>
             <div style={{ paddingTop: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                 <label htmlFor="Name">Name : </label>
                 <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
                 <p>onutput : {text}</p>
-                <button onClick={reset} style={{color:'ActiveBorder',backgroundColor:'green'}}>Reset</button>
+                <button onClick={reset} style={{color:'ActiveBorder',backgroundColor:'blue'}}>Reset</button>
+            </div>
+            <div>
+                <p>i like this {fruits[index].fruit}</p>
+                <button onClick={change} style={{color:'ActiveBorder',backgroundColor:'blue'}}>Change me</button>
             </div>
             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                 {/* pass down url link in url attribuite */}
@@ -47,7 +50,9 @@ const Body = () => {
                 {/* <div>
                     <p>Dandelions by Ruth B. </p>
                 </div> */}
+                 
             </div>
+            
         </div>
     )
 }
